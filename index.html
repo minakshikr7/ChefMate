@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChefMate - AI Recipe Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="chef-icon">👨‍🍳</span>
+                <h1>ChefMate</h1>
+            </div>
+            <p class="tagline">Turn your ingredients into delicious meals</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Ingredient Input Section -->
+            <section class="ingredient-section">
+                <div class="input-card">
+                    <h2>What's in your kitchen?</h2>
+                    <div class="ingredient-input">
+                        <input type="text" id="ingredientInput" placeholder="Add an ingredient (e.g., chicken, tomatoes, rice)">
+                        <button id="addIngredient" class="add-btn">Add</button>
+                    </div>
+                    
+                    <div class="ingredients-list" id="ingredientsList">
+                        <p class="empty-state">Start adding ingredients to see recipe suggestions!</p>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="generateRecipes" class="generate-btn" disabled>
+                            <span class="btn-icon">🔮</span>
+                            Generate Recipes
+                        </button>
+                        <button id="clearAll" class="clear-btn">Clear All</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recipe Results Section -->
+            <section class="recipes-section">
+                <div class="recipes-container" id="recipesContainer">
+                    <div class="welcome-message">
+                        <div class="welcome-icon">🍽️</div>
+                        <h3>Ready to cook something amazing?</h3>
+                        <p>Add some ingredients above and I'll suggest delicious recipes you can make!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saved Recipes Section -->
+            <section class="saved-section">
+                <div class="saved-card">
+                    <h2>
+                        <span class="section-icon">💾</span>
+                        Saved Recipes
+                    </h2>
+                    <div class="saved-recipes" id="savedRecipes">
+                        <p class="empty-state">No saved recipes yet. Save your favorites!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Recipe Modal -->
+        <div class="modal-overlay" id="recipeModal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal">&times;</button>
+                <div class="modal-body" id="modalBody">
+                    <!-- Recipe details will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Cooking up some recipes...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
